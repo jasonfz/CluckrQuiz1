@@ -1,0 +1,29 @@
+<%- include("../partials/header.ejs") %>
+
+
+
+<h1>Posts Index</h1>
+
+<div>
+    <% for (let post of posts)  { %>
+      <div class="card mb-4">
+        <div class="card-body">
+            
+            <span>
+                <h5><%- post.username %></h5>
+            </span>
+            <span>
+                <h5><%- post.created_at %></h5>
+            </span>
+            
+          <a href="/posts/<%- post.id %>">
+            <h5 class="card-title"><%- post.title %></h5>
+          </a>
+          <p class="card-text"><%- post.content %></p>
+        </div>
+      </div>
+      <% } %>
+    </div>
+<%- include("../partials/footer.ejs") %> 
+
+
